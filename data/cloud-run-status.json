@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-07-29T06:18:36.507Z",
+  "checkedAt": "2026-07-29T07:58:51.387Z",
   "eventName": "workflow_dispatch",
   "notifyMode": "on_issue",
   "assessment": {
@@ -13,5 +13,5 @@
     "sent": false
   },
   "feishuEntryUrl": "https://gcnhro30hdk4.feishu.cn/docx/CJ66dVc3Loxb3VxL2xPcXGg6nIf",
-  "snapshotGeneratedAt": "2026-07-29 14:17"
+  "snapshotGeneratedAt": "2026-07-29 15:58"
 }
