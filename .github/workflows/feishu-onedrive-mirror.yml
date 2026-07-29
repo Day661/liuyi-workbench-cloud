@@ -1,0 +1,56 @@
+name: Feishu to OneDrive Mirror
+
+on:
+  schedule:
+    # Every six hours, offset from busy exact-hour windows.
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Read Feishu only; do not write OneDrive"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: feishu-onedrive-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install official Feishu CLI
+        run: npm install --global @larksuite/cli@1.0.63
+
+      - name: Configure Feishu bot identity
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+        run: printf '%s' "$FEISHU_APP_SECRET" | lark-cli config init --app-id "$FEISHU_APP_ID" --app-secret-stdin --brand feishu
+
+      - name: Validate mirror script
+        run: node --check scripts/feishu-onedrive-mirror.mjs
+
+      - name: Mirror Feishu Markdown to OneDrive
+        env:
+          FEISHU_MIRROR_ROOTS_JSON: ${{ secrets.FEISHU_MIRROR_ROOTS_JSON }}
+          ONEDRIVE_REFRESH_TOKEN: ${{ secrets.ONEDRIVE_REFRESH_TOKEN }}
+          ONEDRIVE_OAUTH_CLIENT_ID: ${{ secrets.ONEDRIVE_OAUTH_CLIENT_ID }}
+          ONEDRIVE_OAUTH_CLIENT_SECRET: ${{ secrets.ONEDRIVE_OAUTH_CLIENT_SECRET }}
+          ONEDRIVE_DRIVE_ID: ${{ secrets.ONEDRIVE_DRIVE_ID }}
+          ONEDRIVE_BASE_PATH: "Typora/MyVault"
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node scripts/feishu-onedrive-mirror.mjs
