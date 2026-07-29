@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-07-29",
+  "generatedAt": "2026-07-29T06:27:18.215241+00:00",
+  "sourceThread": {
+    "id": "019fa7b4-9401-71b0-8d78-53c2a750967e",
+    "title": "在线思考知识库"
+  },
+  "selectionMode": "marked_only",
+  "markerPattern": "(#企微|#日报|#发群|发到企微|发送到企微|进群摘要|企微群摘要)",
+  "itemCount": 0,
+  "items": []
+}
