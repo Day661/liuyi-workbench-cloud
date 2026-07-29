@@ -1,46 +1,120 @@
 {
-  "generatedAt": "2026-07-29 15:58",
+  "generatedAt": "2026-07-29 17:30",
   "sync": {
-    "state": "synced",
-    "completedAt": "07/29/2026 14:18:14",
-    "localNoteCount": 27,
-    "codexTaskCount": 16,
+    "state": "local_synced_remote_error",
+    "completedAt": "07/29/2026 15:58:14",
+    "localNoteCount": 28,
+    "codexTaskCount": 17,
     "conflictCount": 0,
     "nextRun": "每天 20:00"
   },
-  "focus": [
+  "directions": [
     {
-      "group": "今天与近期",
-      "branch": "本周主线",
+      "group": "长期方向",
+      "branch": "职业身份",
+      "name": "职业身份重组",
+      "status": "探索中",
+      "next": "把外贸、英文与结构化能力连接到更有专业门槛的技术商务、项目协调、合规/认证或售前支持方向。",
+      "timing": "阶段性回看",
+      "note": "长期目标不是尽快换一份工作，而是进入值得长期积累的专业位置。",
+      "skill": "personal-workbench",
+      "url": "https://gcnhro30hdk4.feishu.cn/docx/BBlxdVHqqoCA8hxHqHGc2aEWnAg?from=from_copylink",
+      "urlLabel": "打开行动总纲"
+    },
+    {
+      "group": "长期方向",
+      "branch": "内容与收入",
+      "name": "建立可迁移的收入能力",
+      "status": "试验中",
+      "next": "通过真实内容样片、说明书设计与可交付成果验证：哪些能力能脱离单一岗位持续积累。",
+      "timing": "按项目沉淀",
+      "note": "优先保留真实证据、作品和可复用流程，不把每次尝试都变成大项目。",
+      "skill": "personal-workbench",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "长期方向",
+      "branch": "能力底盘",
+      "name": "真实英语表达与金融认知",
+      "status": "积累中",
+      "next": "英语服务于真实沟通与未来选择；金融保持低风险、可理解、不过度交易的长期基础。",
+      "timing": "长期小步",
+      "note": "学习不是打卡；每次沉淀一条能在现实里复用的表达或判断即可。",
+      "skill": "english-learning-coach / personal-workbench",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "长期方向",
+      "branch": "个人系统",
+      "name": "飞书中枢与知识资产",
+      "status": "建设中",
+      "next": "让飞书保存最新判断，Codex 负责加工执行，本地保留离线镜像，工作台负责重新进入。",
+      "timing": "持续迭代",
+      "note": "工作台不是待办表，而是隔一段时间仍能看懂自己正在成为谁的入口。",
+      "skill": "personal-workbench / typora-feishu-sync",
+      "url": "https://gcnhro30hdk4.feishu.cn/docx/BBlxdVHqqoCA8hxHqHGc2aEWnAg?from=from_copylink",
+      "urlLabel": "打开中枢总纲"
+    }
+  ],
+  "themes": [
+    {
+      "group": "正在生长的专题",
+      "branch": "内容实验",
       "name": "带货短视频样片",
-      "status": "进行中",
-      "next": "补拍沥水篮 8 个真实使用镜头",
-      "timing": "本周",
-      "note": "素材不足已确认",
+      "status": "真实素材验证",
+      "next": "当前可从沥水篮真实使用镜头、飞书素材文档或电商任务重新进入；不要求每日推进。",
+      "timing": "本周的实验线索",
+      "note": "素材不足已确认；真实体验比快速产出更重要。",
       "skill": "—（任务线程）",
       "url": null,
       "urlLabel": null
     },
     {
-      "group": "今天与近期",
-      "branch": "内容实验",
+      "group": "正在生长的专题",
+      "branch": "语言",
+      "name": "真实英语表达",
+      "status": "持续积累",
+      "next": "从飞书英语知识卡片、抖音收藏补充与个人表达误区中，保留真正用得上的句子。",
+      "timing": "随真实场景发生",
+      "note": "本次新增英语收藏已沉淀到 Typora《英语表达记录》。",
+      "skill": "english-learning-coach",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "正在生长的专题",
+      "branch": "金融",
+      "name": "低风险金融学习",
+      "status": "建立基础",
+      "next": "先建立应急金与风险边界，再决定是否增加新的长期定投；工作台只保留学习入口，不执行交易。",
+      "timing": "每周或需要时",
+      "note": "当前保留既有选择，不以短期涨跌驱动行动。",
+      "skill": "—（任务线程）",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "正在生长的专题",
+      "branch": "内容产品",
       "name": "收藏文稿 → 播客",
       "status": "待确认",
-      "next": "先待定，等你决定是否保留",
-      "timing": "待定",
-      "note": "尚未决定是否做，暂不投入开发",
+      "next": "先保留为未来可能性；只有你明确决定后，才进入内容验证或产品开发。",
+      "timing": "不设催办",
+      "note": "当前不占用你的主注意力。",
       "skill": "待定",
       "url": null,
       "urlLabel": null
     }
   ],
-  "automations": [
+  "companions": [
     {
-      "group": "自动运行",
+      "group": "自动化与轻量陪伴",
       "branch": "飞书自动化",
       "name": "飞书→每日推送",
       "status": "已配置",
-      "next": "下次运行 每天 20:30",
+      "next": "为知识卡片与收藏提供轻量复习入口；正常时静默，异常才需要你关注。",
       "timing": "每天",
       "note": "上次成功；读取知识卡片与抖音按钮",
       "skill": "—（Codex 自动化）",
@@ -48,23 +122,23 @@
       "urlLabel": null
     },
     {
-      "group": "自动运行",
+      "group": "自动化与轻量陪伴",
       "branch": "本地流程",
       "name": "抖音收藏 → 飞书",
       "status": "已配置",
-      "next": "满 72 小时才调用 Codex",
-      "timing": "预计 07.29 09:30",
+      "next": "把新增收藏沉淀为飞书知识卡片；健康检查独立运行，避免无声失败。",
+      "timing": "满 72 小时 + 健康检查",
       "note": "计划任务已注册；未到期试运行返回 0",
       "skill": "douyin-favorites-feishu-sync",
       "url": null,
       "urlLabel": null
     },
     {
-      "group": "自动运行",
+      "group": "自动化与轻量陪伴",
       "branch": "云端流程",
       "name": "基金月度监测",
       "status": "已配置",
-      "next": "读取公开净值并推送企微",
+      "next": "读取公开净值并推送企微；它是信息入口，不替代你的风险判断。",
       "timing": "每月 28 日 19:00",
       "note": "云端运行与企微推送已验证",
       "skill": "—（GitHub Actions）",
@@ -72,11 +146,11 @@
       "urlLabel": "GitHub 仓库"
     },
     {
-      "group": "自动运行",
+      "group": "自动化与轻量陪伴",
       "branch": "手动流程",
       "name": "Flomo 本地同步",
       "status": "手动",
-      "next": "手动导出后由 Skill 解压、导入、校验",
+      "next": "保留碎片记录的本地入口；需要时手动导出后再做增量导入与校验。",
       "timing": "需要时",
       "note": "不会自动操作账号",
       "skill": "flomo-local-sync",
@@ -84,14 +158,14 @@
       "urlLabel": null
     },
     {
-      "group": "自动运行",
-      "branch": "本地优先同步",
-      "name": "工作台 ↔ Codex ↔ 本地文件 / 飞书",
-      "status": "已同步",
-      "next": "Typora 与飞书双向同步完成",
-      "timing": "每天 20:00 + 登录后补跑",
-      "note": "本地 26 篇 / 5 个目录；Codex 索引 16 个 / 工作台入口 9 个；最后运行 07/28 16:18",
-      "skill": "typora-feishu-sync",
+      "group": "自动化与轻量陪伴",
+      "branch": "资料健康校验",
+      "name": "飞书中枢 ↔ 本地镜像 ↔ Codex 索引",
+      "status": "待校验",
+      "next": "核对飞书权威内容、本地镜像、Codex 入口与自动化状态；正常时不打扰你。",
+      "timing": "每天 20:40 + 登录后补跑",
+      "note": "飞书是权威中枢；本地仅作离线镜像，异常才会提示人工处理。",
+      "skill": "personal-workbench / typora-feishu-sync",
       "url": null,
       "urlLabel": null
     }
@@ -176,7 +250,7 @@
     "url": "https://www.douyin.com/jingxuan?modal_id=7665185735931137979"
   },
   "review": [
-    "要充分利用gpt网页版有以下原因： PPT网页版是免费的；然后PPT网页版我认为它的模型能力也比codex强；然后可以在gpt网页端中生成图片，搜索网上的各类知识库，各类开源工具等，确认基本方案之后再发给codex执行。既可以减少自己的返工确认，又可以节省codex额度。",
-    "Codex 是脑筋比较直的直男程序员，GPT 至少是经理级别的。"
+    "1. 把Ob替换成了ty，因为我知道自己只是用Ob作为md阅读器而已，ty也可以实现，而且更轻量化，现在可以直接拉通ty（本地）和飞书，而不是之前的本地-ob-飞书的三式分布。",
+    "2. 内心丰盈者，独行也如众"
   ]
 }
