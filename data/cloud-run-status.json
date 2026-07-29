@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-07-29T06:13:07.091Z",
-  "eventName": "",
-  "notifyMode": "never",
+  "checkedAt": "2026-07-29T06:14:13.382Z",
+  "eventName": "workflow_dispatch",
+  "notifyMode": "always",
   "assessment": {
     "level": "ok",
     "title": "个人工作台云端任务：正常",
-    "reason": "最近快照约 4.3 小时前生成。"
+    "reason": "最近快照约 3.7 小时前生成。"
   },
   "notification": {
-    "attempted": false,
-    "sent": false
+    "attempted": true,
+    "sent": true,
+    "channel": "aibot"
   },
   "feishuEntryUrl": "https://gcnhro30hdk4.feishu.cn/docx/CJ66dVc3Loxb3VxL2xPcXGg6nIf",
   "snapshotGeneratedAt": "2026-07-29 09:56"
