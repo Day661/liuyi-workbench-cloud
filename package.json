@@ -1,0 +1,14 @@
+{
+  "name": "liuyi-workbench-cloud",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/cloud-workbench-sync.mjs",
+    "test": "node --check scripts/cloud-workbench-sync.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

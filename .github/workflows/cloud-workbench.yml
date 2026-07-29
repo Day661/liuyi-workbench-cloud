@@ -1,0 +1,55 @@
+name: Workbench Cloud Sync
+
+on:
+  schedule:
+    # 20:20 Asia/Hong_Kong. Avoid exact-hour GitHub Actions load spikes.
+    - cron: "20 12 * * *"
+  workflow_dispatch:
+    inputs:
+      notify_mode:
+        description: "Notification mode: on_issue, always, never"
+        required: false
+        default: "on_issue"
+  repository_dispatch:
+    types:
+      - workbench_snapshot
+      - codex_activity
+
+permissions:
+  contents: write
+
+concurrency:
+  group: workbench-cloud-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate script
+        run: node --check scripts/cloud-workbench-sync.mjs
+
+      - name: Run cloud workbench sync
+        env:
+          WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
+          FEISHU_ENTRY_URL: ${{ vars.FEISHU_ENTRY_URL }}
+          NOTIFY_MODE: ${{ github.event.inputs.notify_mode || github.event.client_payload.notify_mode || 'on_issue' }}
+        run: node scripts/cloud-workbench-sync.mjs
+
+      - name: Commit cloud status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cloud-run-status.json
+          git diff --cached --quiet || git commit -m "chore: update cloud workbench status"
+          git push
+

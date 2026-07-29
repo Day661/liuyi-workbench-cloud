@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-07-29T06:09:04.892Z",
+  "eventName": "",
+  "notifyMode": "never",
+  "assessment": {
+    "level": "ok",
+    "title": "个人工作台云端任务：正常",
+    "reason": "最近快照约 4.2 小时前生成。"
+  },
+  "notification": {
+    "attempted": false,
+    "sent": false
+  },
+  "feishuEntryUrl": "https://gcnhro30hdk4.feishu.cn/docx/CJ66dVc3Loxb3VxL2xPcXGg6nIf",
+  "snapshotGeneratedAt": "2026-07-29 09:56"
+}

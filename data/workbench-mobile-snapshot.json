@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-07-29 09:56",
+  "sync": {
+    "state": "synced",
+    "completedAt": "07/29/2026 08:41:14",
+    "localNoteCount": 27,
+    "codexTaskCount": 16,
+    "conflictCount": 0,
+    "nextRun": "每天 20:00"
+  },
+  "focus": [
+    {
+      "group": "今天与近期",
+      "branch": "本周主线",
+      "name": "带货短视频样片",
+      "status": "进行中",
+      "next": "补拍沥水篮 8 个真实使用镜头",
+      "timing": "本周",
+      "note": "素材不足已确认",
+      "skill": "—（任务线程）",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "今天与近期",
+      "branch": "内容实验",
+      "name": "收藏文稿 → 播客",
+      "status": "待确认",
+      "next": "先待定，等你决定是否保留",
+      "timing": "待定",
+      "note": "尚未决定是否做，暂不投入开发",
+      "skill": "待定",
+      "url": null,
+      "urlLabel": null
+    }
+  ],
+  "automations": [
+    {
+      "group": "自动运行",
+      "branch": "飞书自动化",
+      "name": "飞书→每日推送",
+      "status": "已配置",
+      "next": "下次运行 每天 20:30",
+      "timing": "每天",
+      "note": "上次成功；读取知识卡片与抖音按钮",
+      "skill": "—（Codex 自动化）",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "自动运行",
+      "branch": "本地流程",
+      "name": "抖音收藏 → 飞书",
+      "status": "已配置",
+      "next": "满 72 小时才调用 Codex",
+      "timing": "预计 07.29 09:30",
+      "note": "计划任务已注册；未到期试运行返回 0",
+      "skill": "douyin-favorites-feishu-sync",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "自动运行",
+      "branch": "云端流程",
+      "name": "基金月度监测",
+      "status": "已配置",
+      "next": "读取公开净值并推送企微",
+      "timing": "每月 28 日 19:00",
+      "note": "云端运行与企微推送已验证",
+      "skill": "—（GitHub Actions）",
+      "url": "https://github.com/Day661/wecom-fund-monitor",
+      "urlLabel": "GitHub 仓库"
+    },
+    {
+      "group": "自动运行",
+      "branch": "手动流程",
+      "name": "Flomo 本地同步",
+      "status": "手动",
+      "next": "手动导出后由 Skill 解压、导入、校验",
+      "timing": "需要时",
+      "note": "不会自动操作账号",
+      "skill": "flomo-local-sync",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "自动运行",
+      "branch": "本地优先同步",
+      "name": "工作台 ↔ Codex ↔ 本地文件 / 飞书",
+      "status": "已同步",
+      "next": "Typora 与飞书双向同步完成",
+      "timing": "每天 20:00 + 登录后补跑",
+      "note": "本地 26 篇 / 5 个目录；Codex 索引 16 个 / 工作台入口 9 个；最后运行 07/28 16:18",
+      "skill": "typora-feishu-sync",
+      "url": null,
+      "urlLabel": null
+    }
+  ],
+  "projects": [
+    {
+      "group": "创作与收入",
+      "branch": "内容变现",
+      "name": "带货短视频",
+      "status": "进行中",
+      "next": "完成沥水篮真实使用样片",
+      "timing": "本周主线",
+      "note": "真实证据驱动",
+      "skill": "—（任务线程）",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "创作与收入",
+      "branch": "内容产品",
+      "name": "收藏文稿 → 播客",
+      "status": "待确认",
+      "next": "先待定，等你决定是否保留",
+      "timing": "待定",
+      "note": "APP / 小程序均不推进",
+      "skill": "待定",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "创作与收入",
+      "branch": "自由职业",
+      "name": "功能沙发说明书设计",
+      "status": "准备中",
+      "next": "建立作品、报价与防扯皮条款",
+      "timing": "机会驱动",
+      "note": "历史任务在 ChatGPT",
+      "skill": "—（待沉淀）",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "学习与成长",
+      "branch": "金融",
+      "name": "金融学习",
+      "status": "进行中",
+      "next": "完成第一阶段学习地图",
+      "timing": "每周 2 次",
+      "note": "不登录支付宝、不下单",
+      "skill": "—（任务线程）",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "学习与成长",
+      "branch": "语言",
+      "name": "真实英语表达",
+      "status": "进行中",
+      "next": "真实对话纠错并沉淀个人误区",
+      "timing": "灵活练习",
+      "note": "简单、自然、贴近原表达",
+      "skill": "english-learning-coach",
+      "url": null,
+      "urlLabel": null
+    },
+    {
+      "group": "个人系统",
+      "branch": "工具",
+      "name": "个人工作台",
+      "status": "进行中",
+      "next": "修剪分类并补充真实地址",
+      "timing": "V0.5",
+      "note": "可编辑、可打开、白名单执行",
+      "skill": "frontend-design / powershell-7-modern",
+      "url": null,
+      "urlLabel": null
+    }
+  ],
+  "english": {
+    "title": "清华博士推荐的活人感口语陪练确实有用",
+    "body": "分类：英语。可见字段显示它是一条关于口语陪练/英语练习的知识卡片；回飞书查看完整核心问题与知识卡片。",
+    "url": "https://www.douyin.com/jingxuan?modal_id=7665185735931137979"
+  },
+  "review": [
+    "要充分利用gpt网页版有以下原因： PPT网页版是免费的；然后PPT网页版我认为它的模型能力也比codex强；然后可以在gpt网页端中生成图片，搜索网上的各类知识库，各类开源工具等，确认基本方案之后再发给codex执行。既可以减少自己的返工确认，又可以节省codex额度。",
+    "Codex 是脑筋比较直的直男程序员，GPT 至少是经理级别的。"
+  ]
+}
