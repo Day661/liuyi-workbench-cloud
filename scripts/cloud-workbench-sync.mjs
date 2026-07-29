@@ -31,63 +31,22 @@ function compactText(value, maxLength = 120) {
 function buildAssessment(snapshot) {
   if (!snapshot) {
     return {
-      level: 'error',
-      title: '个人工作台云端任务：没有快照',
-      reason: 'GitHub 仓库 data/workbench-mobile-snapshot.json 不存在。'
-    };
-  }
-
-  const generatedAt = snapshot.generatedAt ? new Date(snapshot.generatedAt) : null;
-  const ageHours = generatedAt && !Number.isNaN(generatedAt.getTime())
-    ? hoursBetween(generatedAt, new Date())
-    : null;
-  const sync = snapshot.sync ?? {};
-  const conflictCount = Number(sync.conflictCount ?? 0);
-  const state = String(sync.state ?? 'unknown');
-
-  if (conflictCount > 0) {
-    return {
-      level: 'error',
-      title: '个人工作台云端任务：发现同步冲突',
-      reason: `冲突数 ${conflictCount}，需要人工处理。`
-    };
-  }
-
-  if (!['synced', 'recently_synced', 'indexed', 'local_only'].includes(state)) {
-    return {
-      level: 'warning',
-      title: '个人工作台云端任务：本地同步状态异常',
-      reason: `最近快照状态为 ${state}。`
-    };
-  }
-
-  if (ageHours === null) {
-    return {
-      level: 'warning',
-      title: '个人工作台云端任务：快照时间不可读',
-      reason: '无法解析 generatedAt。'
-    };
-  }
-
-  if (ageHours > 36) {
-    return {
-      level: 'warning',
-      title: '个人工作台云端任务：快照偏旧',
-      reason: `最近快照约 ${ageHours.toFixed(1)} 小时前生成，说明电脑或 Codex 最近没有上传新快照。`
+      level: 'archived',
+      title: '个人工作台云端快照：未发布',
+      reason: '日常工作台已迁移到飞书发展地图；云端快照不再用于健康告警。'
     };
   }
 
   return {
-    level: 'ok',
-    title: '个人工作台云端任务：正常',
-    reason: `最近快照约 ${ageHours.toFixed(1)} 小时前生成。`
+    level: 'archived',
+    title: '个人工作台云端快照：仅供存档',
+    reason: '健康告警改由本地同步包装脚本产生；不再以旧 GitHub 快照判断本地同步。'
   };
 }
 
 function shouldNotify(assessment, notifyMode) {
   if (notifyMode === 'always') return true;
-  if (notifyMode === 'never') return false;
-  return assessment.level !== 'ok';
+  return false;
 }
 
 function buildMessage({ assessment, snapshot, feishuEntryUrl, eventName }) {
