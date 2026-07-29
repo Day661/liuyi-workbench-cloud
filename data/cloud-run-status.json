@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-07-29T07:58:51.387Z",
+  "checkedAt": "2026-07-29T09:30:57.090Z",
   "eventName": "workflow_dispatch",
   "notifyMode": "on_issue",
   "assessment": {
-    "level": "ok",
-    "title": "个人工作台云端任务：正常",
-    "reason": "最近快照约 8.0 小时前生成。"
+    "level": "warning",
+    "title": "个人工作台云端任务：本地同步状态异常",
+    "reason": "最近快照状态为 local_synced_remote_error。"
   },
   "notification": {
-    "attempted": false,
-    "sent": false
+    "attempted": true,
+    "sent": true,
+    "channel": "aibot"
   },
   "feishuEntryUrl": "https://gcnhro30hdk4.feishu.cn/docx/CJ66dVc3Loxb3VxL2xPcXGg6nIf",
-  "snapshotGeneratedAt": "2026-07-29 15:58"
+  "snapshotGeneratedAt": "2026-07-29 17:30"
 }
