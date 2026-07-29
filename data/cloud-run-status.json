@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-07-29T09:30:57.090Z",
-  "eventName": "workflow_dispatch",
+  "checkedAt": "2026-07-29T14:33:02.453Z",
+  "eventName": "schedule",
   "notifyMode": "on_issue",
   "assessment": {
     "level": "warning",
