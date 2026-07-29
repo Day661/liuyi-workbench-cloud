@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-07-29T06:09:04.892Z",
+  "checkedAt": "2026-07-29T06:13:07.091Z",
   "eventName": "",
   "notifyMode": "never",
   "assessment": {
     "level": "ok",
     "title": "个人工作台云端任务：正常",
-    "reason": "最近快照约 4.2 小时前生成。"
+    "reason": "最近快照约 4.3 小时前生成。"
   },
   "notification": {
     "attempted": false,

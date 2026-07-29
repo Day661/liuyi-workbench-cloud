@@ -7,8 +7,10 @@
     "sync": "node scripts/cloud-workbench-sync.mjs",
     "test": "node --check scripts/cloud-workbench-sync.mjs"
   },
+  "dependencies": {
+    "@wecom/aibot-node-sdk": "1.0.7"
+  },
   "engines": {
     "node": ">=20"
   }
 }
-

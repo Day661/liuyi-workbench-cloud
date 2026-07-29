@@ -38,9 +38,15 @@ jobs:
       - name: Validate script
         run: node --check scripts/cloud-workbench-sync.mjs
 
+      - name: Install runtime dependencies
+        run: npm install --omit=dev
+
       - name: Run cloud workbench sync
         env:
           WECOM_WEBHOOK_URL: ${{ secrets.WECOM_WEBHOOK_URL }}
+          WECOM_BOT_ID: ${{ secrets.WECOM_BOT_ID }}
+          WECOM_BOT_SECRET: ${{ secrets.WECOM_BOT_SECRET }}
+          WECOM_TARGET_CHAT_ID: ${{ secrets.WECOM_TARGET_CHAT_ID }}
           FEISHU_ENTRY_URL: ${{ vars.FEISHU_ENTRY_URL }}
           NOTIFY_MODE: ${{ github.event.inputs.notify_mode || github.event.client_payload.notify_mode || 'on_issue' }}
         run: node scripts/cloud-workbench-sync.mjs
@@ -52,4 +58,3 @@ jobs:
           git add data/cloud-run-status.json
           git diff --cached --quiet || git commit -m "chore: update cloud workbench status"
           git push
-

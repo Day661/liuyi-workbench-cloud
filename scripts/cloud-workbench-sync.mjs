@@ -121,9 +121,60 @@ function buildMessage({ assessment, snapshot, feishuEntryUrl, eventName }) {
   return lines.join('\n');
 }
 
-async function sendWeCom(webhookUrl, message) {
+async function sendWeComWithAibot(message) {
+  const botId = process.env.WECOM_BOT_ID;
+  const secret = process.env.WECOM_BOT_SECRET;
+  const targetChatId = process.env.WECOM_TARGET_CHAT_ID;
+  if (!botId || !secret || !targetChatId) {
+    return null;
+  }
+
+  const { WSClient } = await import('@wecom/aibot-node-sdk');
+  const client = new WSClient({
+    botId,
+    secret,
+    maxReconnectAttempts: 3,
+    maxAuthFailureAttempts: 1
+  });
+
+  return await new Promise((resolvePromise, reject) => {
+    let settled = false;
+    const timeout = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      client.disconnect();
+      reject(new Error('WeCom AI Bot send timed out.'));
+    }, 25000);
+
+    const finish = (result, error) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      client.disconnect();
+      if (error) reject(error);
+      else resolvePromise(result);
+    };
+
+    client.on('authenticated', async () => {
+      try {
+        await client.sendMessage(targetChatId, {
+          msgtype: 'markdown',
+          markdown: { content: message }
+        });
+        finish({ channel: 'aibot', sent: true });
+      } catch (error) {
+        finish(null, error);
+      }
+    });
+
+    client.on('error', (error) => finish(null, error));
+    client.connect();
+  });
+}
+
+async function sendWeComWithWebhook(webhookUrl, message) {
   if (!webhookUrl) {
-    throw new Error('Missing WECOM_WEBHOOK_URL secret.');
+    throw new Error('Missing WeCom notification secret. Set WECOM_BOT_ID/WECOM_BOT_SECRET/WECOM_TARGET_CHAT_ID or WECOM_WEBHOOK_URL.');
   }
 
   const response = await fetch(webhookUrl, {
@@ -140,7 +191,13 @@ async function sendWeCom(webhookUrl, message) {
     throw new Error(`WeCom rejected message: HTTP ${response.status}, errcode ${body.errcode}, errmsg ${body.errmsg}`);
   }
 
-  return body;
+  return { channel: 'webhook', sent: true, body };
+}
+
+async function sendWeCom(message) {
+  const aibotResult = await sendWeComWithAibot(message);
+  if (aibotResult) return aibotResult;
+  return await sendWeComWithWebhook(process.env.WECOM_WEBHOOK_URL, message);
 }
 
 await mkdir(dataDir, { recursive: true });
@@ -156,8 +213,9 @@ let notification = { attempted: false, sent: false };
 
 if (shouldNotify(assessment, notifyMode)) {
   notification.attempted = true;
-  await sendWeCom(process.env.WECOM_WEBHOOK_URL, message);
+  const sendResult = await sendWeCom(message);
   notification.sent = true;
+  notification.channel = sendResult.channel;
 }
 
 const status = {
