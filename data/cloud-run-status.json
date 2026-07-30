@@ -1,17 +1,16 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-07-29T14:33:02.453Z",
+  "checkedAt": "2026-07-30T14:33:28.461Z",
   "eventName": "schedule",
   "notifyMode": "on_issue",
   "assessment": {
-    "level": "warning",
-    "title": "个人工作台云端任务：本地同步状态异常",
-    "reason": "最近快照状态为 local_synced_remote_error。"
+    "level": "archived",
+    "title": "个人工作台云端快照：仅供存档",
+    "reason": "健康告警改由本地同步包装脚本产生；不再以旧 GitHub 快照判断本地同步。"
   },
   "notification": {
-    "attempted": true,
-    "sent": true,
-    "channel": "aibot"
+    "attempted": false,
+    "sent": false
   },
   "feishuEntryUrl": "https://gcnhro30hdk4.feishu.cn/docx/CJ66dVc3Loxb3VxL2xPcXGg6nIf",
   "snapshotGeneratedAt": "2026-07-29 17:30"
