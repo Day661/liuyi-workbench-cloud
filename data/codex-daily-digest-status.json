@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-08-10T14:12:15.364Z",
-  "today": "2026-08-10",
+  "checkedAt": "2026-08-11T14:11:27.929Z",
+  "today": "2026-08-11",
   "digestDate": "2026-07-29",
   "itemCount": 0,
   "sent": false,
   "skipped": true,
-  "reason": "Digest date 2026-07-29 does not match today 2026-08-10."
+  "reason": "Digest date 2026-07-29 does not match today 2026-08-11."
 }
